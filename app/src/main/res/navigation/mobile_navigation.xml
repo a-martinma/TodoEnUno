@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.todoenuno.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/numeroAleatorio"
+        android:name="com.example.todoenuno.NumeroAleatorio"
+        android:label="fragment_numero_aleatorio"
+        tools:layout="@layout/fragment_numero_aleatorio" />
+    <fragment
+        android:id="@+id/generadorPasswords"
+        android:name="com.example.todoenuno.GeneradorPasswords"
+        android:label="fragment_generador_passwords"
+        tools:layout="@layout/fragment_generador_passwords" />
+    <fragment
+        android:id="@+id/calculadoraEdad"
+        android:name="com.example.todoenuno.CalculadoraEdad"
+        android:label="fragment_calculadora_edad"
+        tools:layout="@layout/fragment_calculadora_edad" />
+</navigation>
