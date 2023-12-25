@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Sonido.startPlaying(this,R.raw.musicadefondo);
+        //Sonido.pulsarUnaVez(this, R.raw.sonidopulsar);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 

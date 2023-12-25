@@ -15,4 +15,11 @@
     <string name="menu_numAleatorio">Numero aleatorio</string>
     <string name="generador_passwords">Generador passwords</string>
     <string name="calculadora_edad">Calculadora edad</string>
+    <string name="generar">Generar</string>
+    <string name="nada">-</string>
+    <string name="generador_de_n_meros_aleatorios">Generador de números aleatorios</string>
+    <string name="valor_maximo">Valor máximo:</string>
+    <string name="valor_minimo">Valor mínimo:</string>
+    <string name="ingrese_un_numero2">Ingrese un número</string>
+    <string name="ingrese_un_numero">Ingrese un número</string>
 </resources>

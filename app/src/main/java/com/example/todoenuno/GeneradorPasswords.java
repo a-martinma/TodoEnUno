@@ -58,6 +58,7 @@ public class GeneradorPasswords extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_generador_passwords, container, false);
     }
