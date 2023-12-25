@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_casa"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/numeroAleatorio"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_numaleatorio"
             android:title="@string/menu_numAleatorio" />
         <item
             android:id="@+id/generadorPasswords"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_passwords"
             android:title="@string/generador_passwords" />
         <item
             android:id="@+id/calculadoraEdad"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_edad"
             android:title="@string/calculadora_edad" />
     </group>
 </menu>
