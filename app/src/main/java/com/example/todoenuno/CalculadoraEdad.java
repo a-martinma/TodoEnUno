@@ -1,65 +1,91 @@
 package com.example.todoenuno;
 
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CalculadoraEdad#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+
+
+import java.util.Calendar;
+
+
 public class CalculadoraEdad extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private Button botonSeleccionEdad;
+    private TextView textViewResultado;
+    private Calendar fechaSeleccionada;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CalculadoraEdad() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CalculadoraEdad.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CalculadoraEdad newInstance(String param1, String param2) {
-        CalculadoraEdad fragment = new CalculadoraEdad();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @SuppressLint("MissingInflatedId")
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calculadora_edad, container, false);
+        View view = inflater.inflate(R.layout.fragment_calculadora_edad, container, false);
+
+        botonSeleccionEdad = view.findViewById(R.id.botonSeleccionarFecha);
+        textViewResultado = view.findViewById(R.id.textViewEdadResultado);
+
+        botonSeleccionEdad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarSeleccionadorEdad();
+                Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
+            }
+        });
+
+        return view;
+    }
+
+    private void mostrarSeleccionadorEdad() {
+        final Calendar currentDate = Calendar.getInstance();
+
+        //Se obtiene la fecha actual para que se muestre inicialmente al abrir el datePickerDialog
+        int anio = currentDate.get(Calendar.YEAR);
+        int mes = currentDate.get(Calendar.MONTH);
+        int dia = currentDate.get(Calendar.DAY_OF_MONTH);
+
+        //Se crea el datePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                requireContext(),
+                new DatePickerDialog.OnDateSetListener() {
+                    //Cuando el usuario elige la fecha, se recoge y se pasa al método calcularEdad
+                    @Override
+                    public void onDateSet(DatePicker view, int anio, int mes, int dia) {
+                        fechaSeleccionada = Calendar.getInstance();
+                        fechaSeleccionada.set(anio, mes, dia);
+                        calcularEdad();
+                    }
+                },
+                anio, mes, dia //Valores iniciales
+        );
+
+        datePickerDialog.show(); //Se muestra el calendario
+    }
+
+    private void calcularEdad() {
+        if (fechaSeleccionada != null) {
+            Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
+            Calendar hoy = Calendar.getInstance();
+
+            //Se calcula la diferencia de años normal
+            int edad = hoy.get(Calendar.YEAR) - fechaSeleccionada.get(Calendar.YEAR);
+
+            //Hay que ver si se han cumplido los años este año o no
+            if (hoy.get(Calendar.DAY_OF_YEAR) < fechaSeleccionada.get(Calendar.DAY_OF_YEAR)) {
+                edad--;
+            }
+
+            textViewResultado.setText("Tienes: " + edad + " años");
+        }else{
+            Toast.makeText(getActivity(), "Debes introducir una fecha para calcular la edad", Toast.LENGTH_SHORT).show();
+            Sonido.pulsarUnaVez(getActivity(), R.raw.sonidoerror);
+        }
     }
 }

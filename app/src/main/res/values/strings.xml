@@ -22,4 +22,9 @@
     <string name="valor_minimo">Valor mínimo:</string>
     <string name="ingrese_un_numero2">Ingrese un número</string>
     <string name="ingrese_un_numero">Ingrese un número</string>
+    <string name="ingresa_fecha_nacimiento">Ingresa tu fecha de nacimiento</string>
+    <string name="calculadora_de_edad">Calculadora de edad</string>
+    <string name="seleccionar_fecha">Selecciona tu fecha de nacimiento</string>
+    <string name="click_aqui">Haz click aquí para seleccionar su fecha de nacimiento</string>
+    <string name="vacio" />
 </resources>
