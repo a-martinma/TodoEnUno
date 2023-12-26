@@ -1,65 +1,106 @@
 package com.example.todoenuno;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GeneradorPasswords#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import java.security.SecureRandom;
+
 public class GeneradorPasswords extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private CheckBox checkBoxNums;
+    private CheckBox checkBoxMayus;
+    private CheckBox checkBoxMinus;
+    private CheckBox checkBoxCaracteres;
+    private SeekBar seekBarLongitud;
+    private TextView textViewLongitud;
+    private Button botonGenerarPassword;
+    private TextView textViewNumeroResultado;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public GeneradorPasswords() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GeneradorPasswords.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GeneradorPasswords newInstance(String param1, String param2) {
-        GeneradorPasswords fragment = new GeneradorPasswords();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @SuppressLint({"StringFormatInvalid", "MissingInflatedId"})
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_generador_passwords, container, false);
+
+        checkBoxNums = view.findViewById(R.id.checkBoxNums);
+        checkBoxMayus = view.findViewById(R.id.checkBoxMayus);
+        checkBoxMinus = view.findViewById(R.id.checkBoxMinus);
+        checkBoxCaracteres = view.findViewById(R.id.checkBoxCaracteres);
+        seekBarLongitud = view.findViewById(R.id.seekBarLongitudContrasenia);
+        textViewLongitud = view.findViewById(R.id.textViewLongitudContrasenia);
+        botonGenerarPassword = view.findViewById(R.id.botonGenerarPassword);
+        textViewNumeroResultado = view.findViewById(R.id.textViewNumeroResultado);
+
+        seekBarLongitud.setMax(18); //Longitud máxima posible de la contraseña
+        seekBarLongitud.setProgress(10); // Valor inicial
+        textViewLongitud.setText(getString(R.string.longitud_contrasenia, seekBarLongitud.getProgress()));
+
+        //Listener para que vaya cambiando el numero del textView de la seekBar cuando el usuario vaya modificándola.
+        seekBarLongitud.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textViewLongitud.setText(getString(R.string.longitud_contrasenia, progress));
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar){}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar){}
+        });
+
+        //Listener para cuando se pulsa el botón, que se genere la contraseña
+        botonGenerarPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
+                generarPassword();
+            }
+        });
+
+        return view;
+    }
+
+    private void generarPassword() {
+
+        String caracteres = "";
+        SecureRandom random = new SecureRandom();
+
+        // Construir la cadena de caracteres permitidos basada en las opciones seleccionadas
+        if (checkBoxNums.isChecked())
+            caracteres += "0123456789";
+        if (checkBoxCaracteres.isChecked())
+            caracteres += "^*=+_-|;:',./[]{}<>()¿?¡!@#$%€&";
+        if (checkBoxMinus.isChecked())
+            caracteres += "abcdefghijklmnñopqrstuvwxyz";
+        if (checkBoxMayus.isChecked())
+            caracteres += "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        if(caracteres.length() == 0){
+            Toast.makeText(getActivity(), "Debes seleccionar al menos una casilla en el checkbox", Toast.LENGTH_SHORT).show();
+            Sonido.pulsarUnaVez(getActivity(), R.raw.sonidoerror);
+            return;
         }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_generador_passwords, container, false);
+        // Se genera la contraseña eligiendo aleatoriamente entre los valores seleccionados
+        int longitud = seekBarLongitud.getProgress();
+        String password = "";
+
+        for (int i = 0; i < longitud; i++) {
+            int valor = random.nextInt(caracteres.length());
+            password += (caracteres.charAt(valor));
+        }
+
+        //Se muestra la contraseña resultado
+        textViewNumeroResultado.setText(password.toString());
     }
 }

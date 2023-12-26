@@ -20,5 +20,9 @@
             android:id="@+id/calculadoraEdad"
             android:icon="@drawable/ic_menu_edad"
             android:title="@string/calculadora_edad" />
+        <item
+            android:id="@+id/calculadoraDescuentos"
+            android:icon="@drawable/ic_menu_calculadora_descuentospng"
+            android:title="@string/calculadora_de_descuentos" />
     </group>
 </menu>

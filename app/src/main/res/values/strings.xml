@@ -27,4 +27,19 @@
     <string name="seleccionar_fecha">Selecciona tu fecha de nacimiento</string>
     <string name="click_aqui">Haz click aquí para seleccionar su fecha de nacimiento</string>
     <string name="vacio" />
+    <string name="minusculas">Minúsculas</string>
+    <string name="caracteres_especiales">Caracteres especiales</string>
+    <string name="mayusculas">Mayúsculas</string>
+    <string name="numeros">Números</string>
+    <string name="generador_de_contrasenias">Generador de contraseñas</string>
+    <string name="longitud_contrasenia">%1$d</string>
+    <string name="calcularedad">CalcularEdad</string>
+    <string name="numaleatorio">numAleatorio</string>
+    <string name="calculadora_de_descuentos">Calculadora de descuentos</string>
+    <string name="introduce_el_precio">Introduce el precio</string>
+    <string name="introduce_el_descuento">Introduce el descuento</string>
+    <string name="precio">Precio</string>
+    <string name="descuento">Descuento</string>
+    <string name="calcular_precio_final">Calcular precio final</string>
+    <string name="precio_euros">Precio (€)</string>
 </resources>

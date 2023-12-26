@@ -26,4 +26,9 @@
         android:name="com.example.todoenuno.CalculadoraEdad"
         android:label="fragment_calculadora_edad"
         tools:layout="@layout/fragment_calculadora_edad" />
+    <fragment
+        android:id="@+id/calculadoraDescuentos"
+        android:name="com.example.todoenuno.CalculadoraDescuentos"
+        android:label="fragment_calculadora_descuentos"
+        tools:layout="@layout/fragment_calculadora_descuentos" />
 </navigation>
