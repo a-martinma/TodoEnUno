@@ -11,6 +11,8 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 
@@ -28,6 +30,14 @@ public class CalculadoraEdad extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
         View view = inflater.inflate(R.layout.fragment_calculadora_edad, container, false);
+
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        if (activity != null) {
+            ActionBar actionBar = activity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle("Calculadora de edad");
+            }
+        }
 
         botonSeleccionEdad = view.findViewById(R.id.botonSeleccionarFecha);
         textViewResultado = view.findViewById(R.id.textViewEdadResultado);
@@ -81,8 +91,11 @@ public class CalculadoraEdad extends Fragment {
             if (hoy.get(Calendar.DAY_OF_YEAR) < fechaSeleccionada.get(Calendar.DAY_OF_YEAR)) {
                 edad--;
             }
+            if(edad >= 0)
+                textViewResultado.setText("Tienes: " + edad + " años");
+            else
+                textViewResultado.setText("Todavía no has nacido");
 
-            textViewResultado.setText("Tienes: " + edad + " años");
         }else{
             Toast.makeText(getActivity(), "Debes introducir una fecha para calcular la edad", Toast.LENGTH_SHORT).show();
             Sonido.pulsarUnaVez(getActivity(), R.raw.sonidoerror);

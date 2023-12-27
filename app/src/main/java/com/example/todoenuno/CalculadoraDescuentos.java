@@ -2,9 +2,6 @@ package com.example.todoenuno;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import java.text.DecimalFormat;
-import java.util.Random;
 
 public class CalculadoraDescuentos extends Fragment {
 
@@ -34,6 +34,14 @@ public class CalculadoraDescuentos extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_calculadora_descuentos, container, false);
 
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        if (activity != null) {
+            ActionBar actionBar = activity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle("Calculadora de descuentos");
+            }
+        }
+
         editTextIntroducirPrecio = view.findViewById(R.id.editTextIntroducirPrecio);
         editTextIntroducirDescuento = view.findViewById(R.id.editTextIntroducirDescuento);
         textViewPrecioTotal = view.findViewById(R.id.textViewPrecioTotal);
@@ -42,6 +50,7 @@ public class CalculadoraDescuentos extends Fragment {
         botonGenerar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
                 calcularPrecio();
             }
         });

@@ -2,6 +2,8 @@ package com.example.todoenuno;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -30,6 +32,14 @@ public class NumeroAleatorio extends Fragment {
         Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_numero_aleatorio, container, false);
+
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        if (activity != null) {
+            ActionBar actionBar = activity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle("Generador de números aleatorios");
+            }
+        }
 
         editTextNumber1 = view.findViewById(R.id.editTextNumber1);
         editTextNumber2 = view.findViewById(R.id.editTextNumber2);

@@ -23,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"
+        app:layout_constraintVertical_bias="0.085"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -38,10 +38,10 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485"
+        app:layout_constraintVertical_bias="0.533"
         tools:ignore="LabelFor" />
 
     <EditText
@@ -59,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485"
+        app:layout_constraintVertical_bias="0.533"
         tools:ignore="LabelFor,DuplicateSpeakableTextCheck" />
 
     <TextView
@@ -75,7 +75,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextIntroducirPrecio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -94,7 +94,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextIntroducirDescuento"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintHorizontal_bias="0.783"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -131,8 +131,21 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738"
+        app:layout_constraintVertical_bias="0.781"
         tools:ignore="MissingConstraints" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="98dp"
+        android:layout_height="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animacion_descuento" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

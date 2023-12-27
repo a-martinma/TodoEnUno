@@ -22,6 +22,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AyudaActivity"
+            android:label="@string/ayuda_activity_label">
+        </activity>
+        <activity
+            android:name=".ActivityAyuda1"
+            android:label="activity_ayuda_1">
+        </activity>
+        <activity
+            android:name=".ActivityAyuda2"
+            android:label="activity_ayuda_2">
+        </activity>
+        <activity
+            android:name=".ActivityAyuda3"
+            android:label="activity_ayuda_3">
+        </activity>
+        <activity
+            android:name=".ActivityAyuda4"
+            android:label="activity_ayuda_4">
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

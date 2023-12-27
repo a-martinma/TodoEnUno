@@ -4,33 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalculadoraEdad"
     android:background="@drawable/fondo">
 
     <TextView
-        android:id="@+id/textoCalcularEdad"
+        android:id="@+id/tituloAyuda11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/architects_daughter"
-        android:text="@string/calculadora_de_edad"
+        android:text="@string/coomo_usar_el_generador_de_numeros_aleatorios"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHighlight="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078"
-        tools:ignore="VisualLintOverlap" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <TextView
-        android:id="@+id/textViewEdadResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/vacio"
+        android:id="@+id/tituloAyuda21"
+        android:layout_width="349dp"
+        android:layout_height="318dp"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/instrucciones_ayuda1"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHighlight="#FFFFFF"
@@ -38,42 +37,28 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
-
-    <Button
-        android:id="@+id/botonSeleccionarFecha"
-        android:layout_width="296dp"
-        android:layout_height="84dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/estilo_boton"
-        android:text="@string/click_aqui"
-        android:textAlignment="center"
-        android:fontFamily="@font/architects_daughter"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656"
+        app:layout_constraintVertical_bias="0.75"
         tools:ignore="TextSizeCheck" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="352dp"
-        android:layout_height="321dp"
+    <Button
+        android:id="@+id/btnVolver1"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@drawable/estilo_boton"
+        android:onClick="atras"
+        android:text="@string/atras"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/architects_daughter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/animacion_calendario"
-        tools:ignore="ImageContrastCheck" />
-
+        app:layout_constraintVertical_bias="0.824"
+        tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_numAleatorio">Numero aleatorio</string>
@@ -39,7 +37,26 @@
     <string name="introduce_el_precio">Introduce el precio</string>
     <string name="introduce_el_descuento">Introduce el descuento</string>
     <string name="precio">Precio</string>
-    <string name="descuento">Descuento</string>
+    <string name="descuento">Descuento (%)</string>
     <string name="calcular_precio_final">Calcular precio final</string>
     <string name="precio_euros">Precio (€)</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="ayuda_activity_label">activity_ayuda</string>
+    <string name="como_usar_la_calculadora_de_descuentos">Cómo usar la calculadora de descuentos</string>
+    <string name="como_usar_el_generador_de_contrasenias">Cómo usar el generador de contraseñas</string>
+    <string name="como_usar_la_claculadora_de_edad">Cómo usar la claculadora de edad</string>
+    <string name="como_usar_el_generador_de_numeros_aleatorios">Cómo usar el generador de números aleatorios</string>
+    <string name="volver_menu">Volver a pantalla inicial</string>
+    <string name="seccion_de_ayuda">Sección de ayuda</string>
+    <string name="texto_ayuda2">Para acceder a las diferentes funcionalidades, selecciona el icono de las tres lineas horizontales situado en la parte superior izquierda de la pantalla en el menú principal y elige la opción que desees.</string>
+    <string name="atras">Atrás</string>
+    <string name="coomo_usar_la_calculadora_de_descuentos">Cómo usar la calculadora de descuentos</string>
+    <string name="instrucciones_ayuda4">Ingresar el precio y el descuento que se aplicará. Luego, hacer clic en el botón \'Calcular precio final\', y el precio rebajado se mostrará justo debajo de ese botón.</string>
+    <string name="coomo_usar_el_generador_de_contrasenias">Cómo usar el generador de contraseñas</string>
+    <string name="instrucciones_ayuda3">Personaliza los elementos de tu contraseña marcando las casillas correspondientes. Ajusta la longitud de la contraseña utilizando la barra deslizante y luego haz clic en el botón \'Generar\'. La contraseña generada se mostrará justo debajo de este botón.</string>
+    <string name="como_usar_la_calculadora_de_edad">Cómo usar la calculadora de edad</string>
+    <string name="instrucciones_ayuda2">Pulsa el botón para abrir un calendario donde podrás seleccionar tu fecha de nacimiento. Una vez seleccionada, pulsa \'Aceptar y el calendario se cerrará, mostrando tu edad.</string>
+    <string name="coomo_usar_el_generador_de_numeros_aleatorios">Cómo usar el generador de números aleatorios</string>
+    <string name="instrucciones_ayuda1">Elige un valor mínimo y máximo para generar un número dentro de ese rango. Después, haz clic en el botón \'Generar\', y el número resultante aparecerá justo debajo de dicho botón.</string>
+    <string name="todo_en_uno">Todo en uno</string>
 </resources>

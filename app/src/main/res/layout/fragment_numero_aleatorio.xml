@@ -23,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114"
+        app:layout_constraintVertical_bias="0.08"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -38,10 +38,10 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503"
+        app:layout_constraintVertical_bias="0.62"
         tools:ignore="LabelFor" />
 
     <EditText
@@ -56,10 +56,10 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.504"
+        app:layout_constraintVertical_bias="0.621"
         tools:ignore="LabelFor,DuplicateSpeakableTextCheck" />
 
     <TextView
@@ -75,17 +75,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumber1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.984"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textoValorMaximo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/architects_daughter"
         android:text="@string/valor_maximo"
         android:textColor="#000000"
@@ -94,7 +94,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -111,10 +111,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonGenerar"
-        app:layout_constraintVertical_bias="0.353" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <Button
         android:id="@+id/botonGenerar"
@@ -131,6 +131,20 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724"
+        app:layout_constraintVertical_bias="0.833"
         tools:ignore="MissingConstraints" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="117dp"
+        android:layout_height="101dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.258"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animacion_aleatorio"
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
