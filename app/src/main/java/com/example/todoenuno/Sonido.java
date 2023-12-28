@@ -10,7 +10,7 @@ public class Sonido {
 
 
     public static void startPlaying(Context context, int resourceId) {
-        if(currentSong == -1) { //Si no hay ninguna música de fondo sonando, que suene.
+        if(currentSong == -1) { //Si no hay ninguna música de fondo sonando, que suene. Se hace para que no se superponga una cancion sobre de otra
             mediaPlayer = MediaPlayer.create(context, resourceId);
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
@@ -22,11 +22,4 @@ public class Sonido {
         mediaPlayer2.start();
     }
 
-    public static void stopPlaying() {
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-    }
 }

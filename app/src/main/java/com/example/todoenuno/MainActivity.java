@@ -3,10 +3,8 @@ package com.example.todoenuno;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -17,7 +15,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.todoenuno.databinding.ActivityMainBinding;
-import com.example.todoenuno.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         Sonido.startPlaying(this,R.raw.musicadefondo);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -37,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.numeroAleatorio, R.id.generadorPasswords, R.id.calculadoraEdad, R.id.calculadoraDescuentos)
                 .setOpenableLayout(drawer)
@@ -56,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.opcion_ayuda){
+        if (item.getItemId() == R.id.opcion_ayuda){
             Intent intent = new Intent(this, AyudaActivity.class);
             startActivity(intent);
             return true;

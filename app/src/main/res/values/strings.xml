@@ -51,12 +51,14 @@
     <string name="texto_ayuda2">Para acceder a las diferentes funcionalidades, selecciona el icono de las tres lineas horizontales situado en la parte superior izquierda de la pantalla en el menú principal y elige la opción que desees.</string>
     <string name="atras">Atrás</string>
     <string name="coomo_usar_la_calculadora_de_descuentos">Cómo usar la calculadora de descuentos</string>
-    <string name="instrucciones_ayuda4">Ingresar el precio y el descuento que se aplicará. Luego, hacer clic en el botón \'Calcular precio final\', y el precio rebajado se mostrará justo debajo de ese botón.</string>
+    <string name="instrucciones_ayuda4">Ingresa el precio y el descuento que se aplicará. Luego, haz clic en el botón \'Calcular precio final\', y el precio rebajado se mostrará justo debajo del botón.</string>
     <string name="coomo_usar_el_generador_de_contrasenias">Cómo usar el generador de contraseñas</string>
     <string name="instrucciones_ayuda3">Personaliza los elementos de tu contraseña marcando las casillas correspondientes. Ajusta la longitud de la contraseña utilizando la barra deslizante y luego haz clic en el botón \'Generar\'. La contraseña generada se mostrará justo debajo de este botón.</string>
     <string name="como_usar_la_calculadora_de_edad">Cómo usar la calculadora de edad</string>
     <string name="instrucciones_ayuda2">Pulsa el botón para abrir un calendario donde podrás seleccionar tu fecha de nacimiento. Una vez seleccionada, pulsa \'Aceptar y el calendario se cerrará, mostrando tu edad.</string>
     <string name="coomo_usar_el_generador_de_numeros_aleatorios">Cómo usar el generador de números aleatorios</string>
-    <string name="instrucciones_ayuda1">Elige un valor mínimo y máximo para generar un número dentro de ese rango. Después, haz clic en el botón \'Generar\', y el número resultante aparecerá justo debajo de dicho botón.</string>
+    <string name="instrucciones_ayuda1">Elige un valor mínimo y máximo para generar un número dentro de ese rango. Después, haz clic en el botón \'Generar\', y el número resultante aparecerá justo debajo del botón. Recuerda que el número máximo debe ser mayor que el mínimo</string>
     <string name="todo_en_uno">Todo en uno</string>
+    <string name="todoenuno">TodoEnUno</string>
+    <string name="todoenuno_descripcion">En TodoEnUno encontrarás todo lo que necesites</string>
 </resources>

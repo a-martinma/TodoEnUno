@@ -70,11 +70,10 @@ public class GeneradorPasswords extends Fragment {
             public void onStopTrackingTouch(SeekBar seekBar){}
         });
 
-        //Listener para cuando se pulsa el botón, que se genere la contraseña
+        //Listener para que se genere la contraseña cuando se pulse el botón.
         botonGenerarPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
                 generarPassword();
             }
         });
@@ -87,7 +86,7 @@ public class GeneradorPasswords extends Fragment {
         String caracteres = "";
         SecureRandom random = new SecureRandom();
 
-        // Construir la cadena de caracteres permitidos basada en las opciones seleccionadas
+        // Crear el conjunto de caracteres permitidos en base a las opciones seleccionadas en los checkboxes
         if (checkBoxNums.isChecked())
             caracteres += "0123456789";
         if (checkBoxCaracteres.isChecked())
@@ -102,7 +101,9 @@ public class GeneradorPasswords extends Fragment {
             return;
         }
 
-        // Se genera la contraseña eligiendo aleatoriamente entre los valores seleccionados
+        Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
+
+        // Se genera la contraseña eligiendo caracteres aleatorios entre los seleccionados
         int longitud = seekBarLongitud.getProgress();
         String password = "";
 
@@ -111,7 +112,7 @@ public class GeneradorPasswords extends Fragment {
             password += (caracteres.charAt(valor));
         }
 
-        //Se muestra la contraseña resultado
-        textViewNumeroResultado.setText(password.toString());
+        //Se muestra la contraseña generada
+        textViewNumeroResultado.setText(password);
     }
 }

@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.todoenuno.R;
-
 public class ActivityAyuda4 extends AppCompatActivity {
 
     @Override

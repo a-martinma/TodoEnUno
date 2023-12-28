@@ -30,7 +30,7 @@ public class NumeroAleatorio extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_numero_aleatorio, container, false);
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
@@ -66,9 +66,11 @@ public class NumeroAleatorio extends Fragment {
             int numero1 = Integer.parseInt(stringNum1);
             int numero2 = Integer.parseInt(stringNum2);
 
-            // Se verifica que el primer numero es menor que el segundo
+            // Se verifica que el primer numero sea menor que el segundo
             if (numero1 < numero2) {
-                int numeroAleatorio = generarNumeroAleatorio(numero1, numero2);
+                Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
+                Random random = new Random();
+                int numeroAleatorio = random.nextInt((numero2 - numero1) + 1) + numero1;
 
                 // Se muestra el numero aleatorio en el textView
                 textViewNumeroResultado.setText(String.valueOf(numeroAleatorio));
@@ -77,14 +79,9 @@ public class NumeroAleatorio extends Fragment {
                 Sonido.pulsarUnaVez(getActivity(), R.raw.sonidoerror);
             }
         } else{
-                Toast.makeText(getActivity(), "Debes rellenar los 2 campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Debes rellenar los 2 campos", Toast.LENGTH_SHORT).show();
             Sonido.pulsarUnaVez(getActivity(), R.raw.sonidoerror);
             }
     }
 
-    private int generarNumeroAleatorio(int min, int max) {
-        Random random = new Random();
-        Sonido.pulsarUnaVez(getActivity(), R.raw.sonidopulsar);
-        return random.nextInt((max - min) + 1) + min;
-    }
 }

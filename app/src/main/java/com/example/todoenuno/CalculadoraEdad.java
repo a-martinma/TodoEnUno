@@ -15,9 +15,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-
 import java.util.Calendar;
-
 
 public class CalculadoraEdad extends Fragment {
 
@@ -65,7 +63,7 @@ public class CalculadoraEdad extends Fragment {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 requireContext(),
                 new DatePickerDialog.OnDateSetListener() {
-                    //Cuando el usuario elige la fecha, se recoge y se pasa al método calcularEdad
+                    //Cuando el usuario elige la fecha, se recoge y se llama al método calcularEdad
                     @Override
                     public void onDateSet(DatePicker view, int anio, int mes, int dia) {
                         fechaSeleccionada = Calendar.getInstance();
